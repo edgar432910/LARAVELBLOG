@@ -1,0 +1,97 @@
+.cursos{
+     background-color: yellow;
+
+ 
+    
+}
+.fondo01{
+    background: url(../img/textura\ mobile\ png.png);
+    position: relative;
+    z-index: -1;
+    
+  }
+
+
+.rede{
+    position: fixed;
+    top:92%;
+    justify-content: center;
+    z-index: 1;
+    
+  }
+
+input[type="search"]{
+    width:170px;
+    margin:10px;
+    padding:10px 16px;
+    border-radius:32px;
+    outline:none;
+    border:2px solid #ccd1d1;
+    background: #fff;;
+    transition:all 0.5s;
+  }
+input[type="search"]:focus{
+    background:#fff;
+    width:300px;
+  }
+
+
+.fondo2{
+    
+    
+
+    background-image: url(../img/rectangulo.png);
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: 100%;
+    z-index: -1;
+  }
+
+  .fondo3{
+    
+     
+    background-image: url(../img/fondo003.png);
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: 100%;
+    z-index: -1;
+  }
+
+.dar{
+    background-color: yellow;
+}
+.grande{
+    visibility:hidden;
+}
+@media(min-width:1024px) {
+  
+  .fondo2{
+    background-image: none;
+    
+  }
+  .grande{
+    visibility:visible;
+  }
+  .fondo01{
+    background: url(../img/textura\ mobile\ png.png);
+    position: relative;
+    z-index: -1;
+    height: 441px;
+    
+  }
+
+}
+
+@media(min-width:600px) {
+  
+  .fondo2{
+    background-image: none;
+    
+  }
+  .fondo3{
+    background-image: none;
+    
+  }
+
+
+}
