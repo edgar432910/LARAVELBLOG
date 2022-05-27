@@ -5,6 +5,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PdfController;
+
+use App\Http\Controllers\YoutubeController;
+use App\Http\Controllers\SpotifyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,6 +51,25 @@ Route::post('pdfs',[PdfController::class,'store'])->name('pdfs.store');
 Route::get('pdfs/image/{imagen_name}', [PdfController::class,'getImage'] );
 Route::get('pdfs/pdf/{imagen_name}', [PdfController::class,'getPdf'] )->name('pdfs.pdf');
 Route::delete('pdfs/{pdf}',[PdfController::class,'destroy'])->name('pdfs.destroy')->middleware(['admi']);;
+
+
+// controladores youtube
+Route::get('youtube',[YoutubeController::class,'index'])->name('youtube.index')->middleware(['admi']);
+Route::post('youtube',[YoutubeController::class,'store'])->name('youtube.store');
+ Route::get('youtube/create',[YoutubeController::class,'create'])->name('youtube.create')->middleware(['admi']);
+ Route::delete('youtube/{youtube}',[YoutubeController::class,'destroy'])->name('youtube.destroy')->middleware(['admi']);
+
+ Route::get('youtube/{youtube}/edit',[YoutubeController::class,'edit'])->name('youtube.edit')->middleware(['admi']);
+ Route::put('youtube/{youtube}',[YoutubeController::class,'update'])->name('youtube.update')->middleware(['admi']);
+
+// controladores spotify
+Route::get('spotify',[SpotifyController::class,'index'])->name('spotify.index')->middleware(['admi']);
+Route::post('spotify',[SpotifyController::class,'store'])->name('spotify.store')->middleware(['admi']);
+Route::get('spotify/image/{imagen_name}', [SpotifyController::class,'getImage'] )->middleware(['admi']);
+ Route::get('spotify/create',[SpotifyController::class,'create'])->name('spotify.create')->middleware(['admi']);
+Route::delete('spotify/{spotify}',[SpotifyController::class,'destroy'])->name('spotify.destroy')->middleware(['admi']);
+
+
 
 Route::get('/', function () {
     return view('pag.index');

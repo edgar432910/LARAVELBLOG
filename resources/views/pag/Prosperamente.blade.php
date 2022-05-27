@@ -87,27 +87,68 @@
      
            
    
+    <article class="">
+   
+        <div class="container mx-auto  lg:w-12/12  lg:px-6 mt-0 lg:mt-28">
+       
+
+              <h2 class="text-azul1 text-center mt-16 lg:mt-10 font-bold text-3xl lg:text-5xl font-roboto ">  Dale click y escucha los Audios</h2>
+
+
+          <div class="grid md:grid-cols-2  justify-center items-start lg:my-5 ">
+               
+                   @foreach($spotifys as $spotify)
+                       
+                        <div class="text-center my-6 lg:mb-12" lg:mt-1>
+                           <div class=" text-center">
+                                 
+                                 <img class="w-80 h-96 md:w-64 md:h-80 mx-auto my-4 lg:my-5 lg:w-80 lg:h-96" src="{{ url('spotify/image/'.$spotify->imagen) }}" alt="{{$spotify->imagen}}">
+                                
+                                 <a href="{{$spotify->url}}" class="inline-block rounded-full text-xl lg:text-3xl bg-azul3 hover:bg-black text-white font-bold font-roboto py-2 px-14 lg:px-24  lg:py-3 focus:outline-none focus:shadow-outline" target="blank_">
+                                    Escuchar Ahora        
+                                 </a>
+                                 
+                                
+                            </div>
+                         </div>
+                           
+                        
+
+                   
+                  @endforeach
+                   
+           </div>
+        </div>
+
+
+    </article>
+
     <article>
-        <div class="container mx-auto lg:px-6 mt-0 lg:mt-28"> 
-                 <div class="mt-10">
+        <div class="container mx-auto  lg:px-6 mt-0 lg:mt-28 ">                 
+        <div class="mt-10">
                     <p class="text-azul1 text-center font-bold text-2xl lg:text-5xl font-roboto">Algunos Extractos de mis Sesiones </p>
 		    <p class="text-celeste -my-1  text-center  text-1xl lg:text-3xl leading-4 w-11/12 lg:w-11/12 mx-auto font-roboto">Comprensión y acción para inspirar tu cambio y evolución  </p>
                 </div>
-                       
-            <div class="grid lg:grid-cols-2 mt-6 gap-7 lg:pt-2  bg-orange-600   items-center lg:mt-20">
-                    <div class=" px-1 mt-4 mb-0 lg:mb-0">
-				<iframe class="w-full lg:w-11/12 mx-auto " height="350" src="https://www.youtube.com/embed/lWcdMUIW84M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                           
-                        </div>
-                        <div class=" px-1 mt-4 mb-0 lg:mb-0">
-				<iframe class="w-full lg:w-11/12 mx-auto " height="350" src="https://www.youtube.com/embed/KydeVeTkdTA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            
-                        </div>            
-
+            
+            <!-- <div class="grid lg:grid-cols-2  gap-7  bg-orange-600  mb-10 lg:mb-40 items-center "> -->
+            <div class="grid lg:grid-cols-2 mt-6 gap-7 lg:pt-2 mb-10 lg:mb-40  bg-orange-600   items-center lg:mt-20">
+                   
+                    @foreach($youtubes as $youtube)          
+                    <div class=" px-1 mt-4 text-center">
+				        <iframe class="w-full lg:w-11/12 mx-auto " height="350" src="{{$youtube->urlweb}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        
+                    </div> 
+                                   
+                                
+              
+                    @endforeach
+                    
             </div>
         </div>
        
-    </article>
+</article>
+    
+    
 
      <article>
         <div class="container mx-auto"> 

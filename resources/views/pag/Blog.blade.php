@@ -1,5 +1,5 @@
 @extends('layouts.base')
-@section('titulo', 'Post')
+@section('titulo', 'BLOG')
 
 @section('contenido') 
 <article class="fondo2 ">
@@ -48,11 +48,15 @@
                                
      </div>
 
-<article>
+    <article>
         <div class="container mx-auto">
-        @foreach($posts as $post)
-                <div class="grid  gap-x-4 mt-28 lg:pt-2 px-1  md:px-44 justify-center items-center ">
-                    <div class="max-w-3xl rounded-2xl overflow-hidden shadow-lg bg-hueso my-8">
+            <div class="grid lg:grid-cols-2   gap-x-4 md:gap-x-10 mt-28 lg:pt-2 px-1  md:pl-11 md:mr-14 justify-center items-center "> 
+            <!-- <div class="grid lg:grid-cols-2  gap-7  bg-orange-600  mb-10 lg:mb-40 items-center "> -->
+            
+                    @foreach($posts as $post)
+               
+
+                    <div class="mx-auto max-w-xl rounded-2xl overflow-hidden shadow-lg bg-hueso my-8">
 
                             
                         
@@ -65,45 +69,12 @@
                                 </div> 
                             </div>
                                  
-                            <div class="mx-4">
-                                <div class="px-4 py-4">
-                                    <?php   
-                                            $a= $post->description;
-                                            // $titulo= trim($a);
-                                            // substr_count($cadena,"5") la veces que se repite
-                                        //    $description= substr($a, 0, 780);
-
-                                        $description= substr($a, 3, 780);
-                                        $salto= strpos($description,'<');
-                                        $salto2= strpos($description,'&n');
-                                        if($salto2){
-                                            if($salto>$salto2){
-                                                $description= substr($a, 3, $salto2);
-                                                    
-                                                }else{
-                                                $description= substr($a, 3, $salto);
-                                                    
-                                                }
-                                        }else{
-                                            
-                                        $description= substr($a, 3, $salto);
-                                        }
-                                       
-
-
-
-                                                                             
-                                    
-                                    ?>
-                                    <p class="leading-2 text-sm lg:text-lg text-justify">
-                                            
-                                        {{ $description }}...
-                                        </p>  
-                                    
+                            <div class="mx-8 py-4">
+                                                          
 
 					                <p>
                                         <div class="flex flex-row space-x-2 justify-between">
-                                            <img src="./img/firma.png" class="w-1/3 lg:w-3/12 mt-4" alt="">
+                                            <img src="./img/firma.png" class="w-1/3 sm:w-4/12 md:w-4/12 mt-4" alt="">
                                             <span>
                                                 <a class="mt-4 text-base lg:text-xl inline-block rounded-lg  bg-azul1 text-white font-bold px-3 py-1 lg:px-5 lg:py-2" href="{{route('blog.show', ['post' => $post->slug])}}">
                                                     Leer más
@@ -113,12 +84,14 @@
                                         </div>
                                     
                                     </p>
-                                </div>
+                               
                             </div>
                             
                     </div>
+
+                    @endforeach
+
                 </div>
-            @endforeach
             <div class="px-6 py-3">
                 {{ $posts->links() }}
     
@@ -127,6 +100,8 @@
         </div>
             
     </article>
+
+
      
 
 

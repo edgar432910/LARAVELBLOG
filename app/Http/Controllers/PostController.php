@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\Post;
 use App\Models\Pdf;
+
+use App\Models\Spotify;
+use App\Models\Youtube;
+
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
@@ -14,12 +18,17 @@ class PostController extends Controller
 {
     public function mostrar(){
         
-        $pdfs = Pdf::paginate(100);       
+        $spotifys = Spotify::orderBy('id', 'desc')->paginate(10);
+        $pdfs = Pdf::orderBy('id', 'desc')->paginate(10);
+        $youtubes = Youtube::orderBy('id', 'desc')->paginate(10);
+
 
         return view('pag.Prosperamente')->with([
-            'pdfs'=>$pdfs,
+            'pdfs'=>$pdfs,'spotifys'=>$spotifys,'youtubes'=> $youtubes
         ]);
     }
+    
+    
     public function show(Post $post){
        
         

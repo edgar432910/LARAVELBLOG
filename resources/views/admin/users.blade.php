@@ -6,8 +6,8 @@
     
   <div class="container mx-auto  lg:px-16 lg:pr-24 "> 
       
-      <div class="grid  lg:grid-cols-4  bg-azul1  justify-center lg:justify-center py-3">
-         
+        <div class="grid  lg:grid-cols-3 gap-y-2  bg-azul1  justify-center lg:justify-center py-3">
+          
           <a href="{{url('/admin')}}"
           class="text-center block text-lg mt-4 px-4  lg:inline-block lg:mt-0 text-teal-200 hover:text-gray-500 mr-7 font-bold text-white bg- ">
           Administrador
@@ -20,6 +20,14 @@
           <a href="{{url('/pdfs')}}"
           class="text-center block text-lg mt-4 px-4  lg:inline-block lg:mt-0 text-teal-200 hover:text-gray-500 mr-7 font-bold text-white ">
           PDFS
+          </a>
+          <a href="{{url('/youtube')}}"
+          class="text-center block text-lg mt-4 px-4  lg:inline-block lg:mt-0 text-teal-200 hover:text-gray-500 mr-7 font-bold text-white ">
+           YOUTUBE
+          </a>
+          <a href="{{url('/spotify')}}"
+          class="text-center block text-lg mt-4 px-4  lg:inline-block lg:mt-0 text-teal-200 hover:text-gray-500 mr-7 font-bold text-white ">
+           SPOTIFY
           </a>
           <a href="{{url('/posts')}}"
           class="text-center block text-lg mt-4 px-4  lg:inline-block lg:mt-0 text-teal-200 hover:text-gray-500 mr-7 font-bold text-white ">
