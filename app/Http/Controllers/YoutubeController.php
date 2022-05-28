@@ -37,8 +37,10 @@ class YoutubeController extends Controller
                 
             ]);
             $url = $request->input('url');
-            $temporal = explode('?v=',$url);
-            $raiz = $temporal[1] ;
+            $temporal = explode('://',$url);
+            $raiz2 = $temporal[1] ;
+            $temporal2 = explode('/',$raiz2);
+            $raiz= $temporal2[1];
 
             $urlweb= 'https://www.youtube.com/embed/'.$raiz;
 
